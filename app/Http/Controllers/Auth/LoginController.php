@@ -43,6 +43,7 @@ class LoginController extends Controller
 //        $this->middleware('guest')->except('logout');
     }
     public function index(Request $request){
+
         $messages = array(
             'name.required' => '请输入用户名',
             'password.required' => '请输入密码',
