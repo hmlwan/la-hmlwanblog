@@ -1,284 +1,1175 @@
-@extends('admin.public.base')
+@extends('admin.public.admin')
 
-@section('title','登录')
+@section('title','首页')
 
-@section('css')
-    <style>
-        .social-or-login ,.social-login,.signup_forgot a{
-            display: none;
-        }
-    </style>
+@section('page-content')
+    <div class="breadcrumbs" id="breadcrumbs">
+        <script type="text/javascript">
+            try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+        </script>
 
-@endsection
+        <ul class="breadcrumb">
+            <li>
+                <i class="icon-home home-icon"></i>
+                <a href="#">首页</a>
+            </li>
+            <li class="active">控制台</li>
+        </ul><!-- .breadcrumb -->
 
+        <div class="nav-search" id="nav-search">
+            <form class="form-search">
+								<span class="input-icon">
+									<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+									<i class="icon-search nav-search-icon"></i>
+								</span>
+            </form>
+        </div><!-- #nav-search -->
+    </div>
 
-@section('main')
-    <body class="login-layout">
-    <div class="main-container">
-        <div class="main-content">
-            <div class="row">
-                <div class="col-sm-10 col-sm-offset-1">
-                    <div class="login-container">
-                        <div class="center">
-                            <h1>
-                                <i class="icon-leaf green"></i>
-                                <span class="red">后台</span>
-                                <span class="white">系统</span>
-                            </h1>
-                            <h4 class="blue">&copy; HMLWAN</h4>
+    <div class="page-content">
+        <div class="page-header">
+            <h1>
+                控制台
+                <small>
+                    <i class="icon-double-angle-right"></i>
+                    查看
+                </small>
+            </h1>
+        </div><!-- /.page-header -->
+
+        <div class="row">
+            <div class="col-xs-12">
+                <!-- PAGE CONTENT BEGINS -->
+
+                <div class="alert alert-block alert-success">
+                    <button type="button" class="close" data-dismiss="alert">
+                        <i class="icon-remove"></i>
+                    </button>
+
+                    <i class="icon-ok green"></i>
+
+                    欢迎使用
+                    <strong class="green">
+                        Ace后台管理系统
+                        <small>(v1.2)</small>
+                    </strong>
+                    ,轻量级好用的后台管理系统模版.
+                </div>
+
+                <div class="row">
+                    <div class="space-6"></div>
+
+                    <div class="col-sm-7 infobox-container">
+                        <div class="infobox infobox-green  ">
+                            <div class="infobox-icon">
+                                <i class="icon-comments"></i>
+                            </div>
+
+                            <div class="infobox-data">
+                                <span class="infobox-data-number">32</span>
+                                <div class="infobox-content">2个评论</div>
+                            </div>
+                            <div class="stat stat-success">8%</div>
+                        </div>
+
+                        <div class="infobox infobox-blue  ">
+                            <div class="infobox-icon">
+                                <i class="icon-twitter"></i>
+                            </div>
+
+                            <div class="infobox-data">
+                                <span class="infobox-data-number">11</span>
+                                <div class="infobox-content">新粉丝</div>
+                            </div>
+
+                            <div class="badge badge-success">
+                                +32%
+                                <i class="icon-arrow-up"></i>
+                            </div>
+                        </div>
+
+                        <div class="infobox infobox-pink  ">
+                            <div class="infobox-icon">
+                                <i class="icon-shopping-cart"></i>
+                            </div>
+
+                            <div class="infobox-data">
+                                <span class="infobox-data-number">8</span>
+                                <div class="infobox-content">新订单</div>
+                            </div>
+                            <div class="stat stat-important">4%</div>
+                        </div>
+
+                        <div class="infobox infobox-red  ">
+                            <div class="infobox-icon">
+                                <i class="icon-beaker"></i>
+                            </div>
+
+                            <div class="infobox-data">
+                                <span class="infobox-data-number">7</span>
+                                <div class="infobox-content">调查</div>
+                            </div>
+                        </div>
+
+                        <div class="infobox infobox-orange2  ">
+                            <div class="infobox-chart">
+                                <span class="sparkline" data-values="196,128,202,177,154,94,100,170,224"></span>
+                            </div>
+
+                            <div class="infobox-data">
+                                <span class="infobox-data-number">6,251</span>
+                                <div class="infobox-content">页面查看次数</div>
+                            </div>
+
+                            <div class="badge badge-success">
+                                7.2%
+                                <i class="icon-arrow-up"></i>
+                            </div>
+                        </div>
+
+                        <div class="infobox infobox-blue2  ">
+                            <div class="infobox-progress">
+                                <div class="easy-pie-chart percentage" data-percent="42" data-size="46">
+                                    <span class="percent">42</span>%
+                                </div>
+                            </div>
+
+                            <div class="infobox-data">
+                                <span class="infobox-text">交易使用</span>
+
+                                <div class="infobox-content">
+                                    <span class="bigger-110">~</span>
+                                    剩余58GB
+                                </div>
+                            </div>
                         </div>
 
                         <div class="space-6"></div>
 
-                        <div class="position-relative">
-                            <div id="login-box" class="login-box visible widget-box no-border">
-                                <div class="widget-body">
-                                    <div class="widget-main">
-                                        <h4 class="header blue lighter bigger">
-                                            <i class="icon-coffee green"></i>
-                                            请输入您的信息
-                                        </h4>
+                        <div class="infobox infobox-green infobox-small infobox-dark">
+                            <div class="infobox-progress">
+                                <div class="easy-pie-chart percentage" data-percent="61" data-size="39">
+                                    <span class="percent">61</span>%
+                                </div>
+                            </div>
 
-                                        <div class="space-6"></div>
+                            <div class="infobox-data">
+                                <div class="infobox-content">任务</div>
+                                <div class="infobox-content">完成</div>
+                            </div>
+                        </div>
 
-                                        <form action="{{ url('auth/login/index')}}" method="post">
-                                            {{ csrf_field() }}
-                                            <fieldset>
-                                                <label class="block clearfix">
-														<span class="block input-icon input-icon-right">
-															<input type="text" class="form-control" name="name" value="{{old('name')}}" placeholder="Username" />
-															<i class="icon-user"></i>
-														</span>
-                                                </label>
+                        <div class="infobox infobox-blue infobox-small infobox-dark">
+                            <div class="infobox-chart">
+                                <span class="sparkline" data-values="3,4,2,3,4,4,2,2"></span>
+                            </div>
 
-                                                <label class="block clearfix">
-														<span class="block input-icon input-icon-right">
-															<input type="password" class="form-control" name="password"  placeholder="Password" />
-															<i class="icon-lock"></i>
-														</span>
-                                                </label>
+                            <div class="infobox-data">
+                                <div class="infobox-content">获得</div>
+                                <div class="infobox-content">$32,000</div>
+                            </div>
+                        </div>
 
-                                                <div class="space"></div>
+                        <div class="infobox infobox-grey infobox-small infobox-dark">
+                            <div class="infobox-icon">
+                                <i class="icon-download-alt"></i>
+                            </div>
 
-                                                <div class="clearfix">
+                            <div class="infobox-data">
+                                <div class="infobox-content">下载次数</div>
+                                <div class="infobox-content">1,205</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="vspace-sm"></div>
+
+                    <div class="col-sm-5">
+                        <div class="widget-box">
+                            <div class="widget-header widget-header-flat widget-header-small">
+                                <h5>
+                                    <i class="icon-signal"></i>
+                                    访问来源
+                                </h5>
+
+                                <div class="widget-toolbar no-border">
+                                    <button class="btn btn-minier btn-primary dropdown-toggle" data-toggle="dropdown">
+                                        本周
+                                        <i class="icon-angle-down icon-on-right bigger-110"></i>
+                                    </button>
+
+                                    <ul class="dropdown-menu pull-right dropdown-125 dropdown-lighter dropdown-caret">
+                                        <li class="active">
+                                            <a href="#" class="blue">
+                                                <i class="icon-caret-right bigger-110">&nbsp;</i>
+                                                本周
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#">
+                                                <i class="icon-caret-right bigger-110 invisible">&nbsp;</i>
+                                                上周
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#">
+                                                <i class="icon-caret-right bigger-110 invisible">&nbsp;</i>
+                                                本月
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#">
+                                                <i class="icon-caret-right bigger-110 invisible">&nbsp;</i>
+                                                上月
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="widget-body">
+                                <div class="widget-main">
+                                    <div id="piechart-placeholder"></div>
+
+                                    <div class="hr hr8 hr-double"></div>
+
+                                    <div class="clearfix">
+                                        <div class="grid3">
+															<span class="grey">
+																<i class="icon-facebook-sign icon-2x blue"></i>
+																&nbsp; likes
+															</span>
+                                            <h4 class="bigger pull-right">1,255</h4>
+                                        </div>
+
+                                        <div class="grid3">
+															<span class="grey">
+																<i class="icon-twitter-sign icon-2x purple"></i>
+																&nbsp; tweets
+															</span>
+                                            <h4 class="bigger pull-right">941</h4>
+                                        </div>
+
+                                        <div class="grid3">
+															<span class="grey">
+																<i class="icon-pinterest-sign icon-2x red"></i>
+																&nbsp; pins
+															</span>
+                                            <h4 class="bigger pull-right">1,050</h4>
+                                        </div>
+                                    </div>
+                                </div><!-- /widget-main -->
+                            </div><!-- /widget-body -->
+                        </div><!-- /widget-box -->
+                    </div><!-- /span -->
+                </div><!-- /row -->
+
+                <div class="hr hr32 hr-dotted"></div>
+
+                <div class="row">
+                    <div class="col-sm-5">
+                        <div class="widget-box transparent">
+                            <div class="widget-header widget-header-flat">
+                                <h4 class="lighter">
+                                    <i class="icon-star orange"></i>
+                                    热门域名
+                                </h4>
+
+                                <div class="widget-toolbar">
+                                    <a href="#" data-action="collapse">
+                                        <i class="icon-chevron-up"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="widget-body">
+                                <div class="widget-main no-padding">
+                                    <table class="table table-bordered table-striped">
+                                        <thead class="thin-border-bottom">
+                                        <tr>
+                                            <th>
+                                                <i class="icon-caret-right blue"></i>
+                                                名称
+                                            </th>
+
+                                            <th>
+                                                <i class="icon-caret-right blue"></i>
+                                                价格
+                                            </th>
+
+                                            <th class="hidden-480">
+                                                <i class="icon-caret-right blue"></i>
+                                                状态
+                                            </th>
+                                        </tr>
+                                        </thead>
+
+                                        <tbody>
+                                        <tr>
+                                            <td>internet.com</td>
+
+                                            <td>
+                                                <small>
+                                                    <s class="red">$29.99</s>
+                                                </small>
+                                                <b class="green">$19.99</b>
+                                            </td>
+
+                                            <td class="hidden-480">
+                                                <span class="label label-info arrowed-right arrowed-in">销售中</span>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>online.com</td>
+
+                                            <td>
+                                                <small>
+                                                    <s class="red"></s>
+                                                </small>
+                                                <b class="green">$16.45</b>
+                                            </td>
+
+                                            <td class="hidden-480">
+                                                <span class="label label-success arrowed-in arrowed-in-right">可用</span>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>newnet.com</td>
+
+                                            <td>
+                                                <small>
+                                                    <s class="red"></s>
+                                                </small>
+                                                <b class="green">$15.00</b>
+                                            </td>
+
+                                            <td class="hidden-480">
+                                                <span class="label label-danger arrowed">待定</span>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>web.com</td>
+
+                                            <td>
+                                                <small>
+                                                    <s class="red">$24.99</s>
+                                                </small>
+                                                <b class="green">$19.95</b>
+                                            </td>
+
+                                            <td class="hidden-480">
+																	<span class="label arrowed">
+																		<s>无货</s>
+																	</span>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>domain.com</td>
+
+                                            <td>
+                                                <small>
+                                                    <s class="red"></s>
+                                                </small>
+                                                <b class="green">$12.00</b>
+                                            </td>
+
+                                            <td class="hidden-480">
+                                                <span class="label label-warning arrowed arrowed-right">售完</span>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div><!-- /widget-main -->
+                            </div><!-- /widget-body -->
+                        </div><!-- /widget-box -->
+                    </div>
+
+                    <div class="col-sm-7">
+                        <div class="widget-box transparent">
+                            <div class="widget-header widget-header-flat">
+                                <h4 class="lighter">
+                                    <i class="icon-signal"></i>
+                                    销售统计
+                                </h4>
+
+                                <div class="widget-toolbar">
+                                    <a href="#" data-action="collapse">
+                                        <i class="icon-chevron-up"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="widget-body">
+                                <div class="widget-main padding-4">
+                                    <div id="sales-charts"></div>
+                                </div><!-- /widget-main -->
+                            </div><!-- /widget-body -->
+                        </div><!-- /widget-box -->
+                    </div>
+                </div>
+
+                <div class="hr hr32 hr-dotted"></div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="widget-box transparent" id="recent-box">
+                            <div class="widget-header">
+                                <h4 class="lighter smaller">
+                                    <i class="icon-rss orange"></i>
+                                    最近
+                                </h4>
+
+                                <div class="widget-toolbar no-border">
+                                    <ul class="nav nav-tabs" id="recent-tab">
+                                        <li class="active">
+                                            <a data-toggle="tab" href="#task-tab">任务</a>
+                                        </li>
+
+                                        <li>
+                                            <a data-toggle="tab" href="#member-tab">会员</a>
+                                        </li>
+
+                                        <li>
+                                            <a data-toggle="tab" href="#comment-tab">评论</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="widget-body">
+                                <div class="widget-main padding-4">
+                                    <div class="tab-content padding-8 overflow-visible">
+                                        <div id="task-tab" class="tab-pane active">
+                                            <h4 class="smaller lighter green">
+                                                <i class="icon-list"></i>
+                                                可拖拽排序列表
+                                            </h4>
+
+                                            <ul id="tasks" class="item-list">
+                                                <li class="item-orange clearfix">
                                                     <label class="inline">
                                                         <input type="checkbox" class="ace" />
-                                                        <span class="lbl"> Remember Me</span>
+                                                        <span class="lbl"> 问答</span>
                                                     </label>
 
-                                                    <button type="submit" class="width-35 pull-right btn btn-sm btn-primary">
-                                                        <i class="icon-key"></i>
-                                                        Login
-                                                    </button>
+                                                    <div class="pull-right easy-pie-chart percentage" data-size="30" data-color="#ECCB71" data-percent="42">
+                                                        <span class="percent">42</span>%
+                                                    </div>
+                                                </li>
+
+                                                <li class="item-red clearfix">
+                                                    <label class="inline">
+                                                        <input type="checkbox" class="ace" />
+                                                        <span class="lbl"> BUG修复</span>
+                                                    </label>
+
+                                                    <div class="pull-right action-buttons">
+                                                        <a href="#" class="blue">
+                                                            <i class="icon-pencil bigger-130"></i>
+                                                        </a>
+
+                                                        <span class="vbar"></span>
+
+                                                        <a href="#" class="red">
+                                                            <i class="icon-trash bigger-130"></i>
+                                                        </a>
+
+                                                        <span class="vbar"></span>
+
+                                                        <a href="#" class="green">
+                                                            <i class="icon-flag bigger-130"></i>
+                                                        </a>
+                                                    </div>
+                                                </li>
+
+                                                <li class="item-default clearfix">
+                                                    <label class="inline">
+                                                        <input type="checkbox" class="ace" />
+                                                        <span class="lbl">添加新的特征</span>
+                                                    </label>
+
+                                                    <div class="inline pull-right position-relative dropdown-hover">
+                                                        <button class="btn btn-minier bigger btn-primary">
+                                                            <i class="icon-cog icon-only bigger-120"></i>
+                                                        </button>
+
+                                                        <ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-caret dropdown-close pull-right">
+                                                            <li>
+                                                                <a href="#" class="tooltip-success" data-rel="tooltip" title="Mark&nbsp;as&nbsp;done">
+																					<span class="green">
+																						<i class="icon-ok bigger-110"></i>
+																					</span>
+                                                                </a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
+																					<span class="red">
+																						<i class="icon-trash bigger-110"></i>
+																					</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+
+                                                <li class="item-blue clearfix">
+                                                    <label class="inline">
+                                                        <input type="checkbox" class="ace" />
+                                                        <span class="lbl"> 更新模版脚本</span>
+                                                    </label>
+                                                </li>
+
+                                                <li class="item-grey clearfix">
+                                                    <label class="inline">
+                                                        <input type="checkbox" class="ace" />
+                                                        <span class="lbl"> 添加新皮肤</span>
+                                                    </label>
+                                                </li>
+
+                                                <li class="item-green clearfix">
+                                                    <label class="inline">
+                                                        <input type="checkbox" class="ace" />
+                                                        <span class="lbl"> 升级服务端</span>
+                                                    </label>
+                                                </li>
+
+                                                <li class="item-pink clearfix">
+                                                    <label class="inline">
+                                                        <input type="checkbox" class="ace" />
+                                                        <span class="lbl"> 清理垃圾</span>
+                                                    </label>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div id="member-tab" class="tab-pane">
+                                            <div class="clearfix">
+                                                <div class="itemdiv memberdiv">
+                                                    <div class="user">
+                                                        <img alt="Bob Doe's avatar" src="{{ URL::asset('statics/admin/assets/avatars/user.jpg') }}" />
+                                                    </div>
+
+                                                    <div class="body">
+                                                        <div class="name">
+                                                            <a href="#">Bob Doe</a>
+                                                        </div>
+
+                                                        <div class="time">
+                                                            <i class="icon-time"></i>
+                                                            <span class="green">20 min</span>
+                                                        </div>
+
+                                                        <div>
+                                                            <span class="label label-warning label-sm">pending</span>
+
+                                                            <div class="inline position-relative">
+                                                                <button class="btn btn-minier bigger btn-yellow btn-no-border dropdown-toggle" data-toggle="dropdown">
+                                                                    <i class="icon-angle-down icon-only bigger-120"></i>
+                                                                </button>
+
+                                                                <ul class="dropdown-menu dropdown-only-icon dropdown-yellow pull-right dropdown-caret dropdown-close">
+                                                                    <li>
+                                                                        <a href="#" class="tooltip-success" data-rel="tooltip" title="Approve">
+																							<span class="green">
+																								<i class="icon-ok bigger-110"></i>
+																							</span>
+                                                                        </a>
+                                                                    </li>
+
+                                                                    <li>
+                                                                        <a href="#" class="tooltip-warning" data-rel="tooltip" title="Reject">
+																							<span class="orange">
+																								<i class="icon-remove bigger-110"></i>
+																							</span>
+                                                                        </a>
+                                                                    </li>
+
+                                                                    <li>
+                                                                        <a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
+																							<span class="red">
+																								<i class="icon-trash bigger-110"></i>
+																							</span>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
 
-                                                <div class="space-4"></div>
-                                            </fieldset>
-                                        </form>
+                                                <div class="itemdiv memberdiv">
+                                                    <div class="user">
+                                                        <img alt="Joe Doe's avatar" src="{{ asset('statics/admin/assets/avatars/avatar2.png')  }}" />
+                                                    </div>
 
-                                        <div class="social-or-login center">
-                                            <span class="bigger-110">Or Login Using</span>
-                                        </div>
+                                                    <div class="body">
+                                                        <div class="name">
+                                                            <a href="#">Joe Doe</a>
+                                                        </div>
 
-                                        <div class="social-login center" >
-                                            <a class="btn btn-primary">
-                                                <i class="icon-facebook"></i>
-                                            </a>
+                                                        <div class="time">
+                                                            <i class="icon-time"></i>
+                                                            <span class="green">1 hour</span>
+                                                        </div>
 
-                                            <a class="btn btn-info">
-                                                <i class="icon-twitter"></i>
-                                            </a>
+                                                        <div>
+                                                            <span class="label label-warning label-sm">pending</span>
 
-                                            <a class="btn btn-danger">
-                                                <i class="icon-google-plus"></i>
-                                            </a>
-                                        </div>
-                                    </div><!-- /widget-main -->
+                                                            <div class="inline position-relative">
+                                                                <button class="btn btn-minier bigger btn-yellow btn-no-border dropdown-toggle" data-toggle="dropdown">
+                                                                    <i class="icon-angle-down icon-only bigger-120"></i>
+                                                                </button>
 
-                                    <div class="toolbar clearfix signup_forgot">
-                                        <div>
-                                            <a href="#" onclick="show_box('forgot-box'); return false;" class="forgot-password-link">
-                                                <i class="icon-arrow-left"></i>
-                                                I forgot my password
-                                            </a>
-                                        </div>
+                                                                <ul class="dropdown-menu dropdown-only-icon dropdown-yellow pull-right dropdown-caret dropdown-close">
+                                                                    <li>
+                                                                        <a href="#" class="tooltip-success" data-rel="tooltip" title="Approve">
+																							<span class="green">
+																								<i class="icon-ok bigger-110"></i>
+																							</span>
+                                                                        </a>
+                                                                    </li>
 
-                                        <div>
-                                            <a href="#" onclick="show_box('signup-box'); return false;" class="user-signup-link">
-                                                I want to register
-                                                <i class="icon-arrow-right"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div><!-- /widget-body -->
-                            </div><!-- /login-box -->
+                                                                    <li>
+                                                                        <a href="#" class="tooltip-warning" data-rel="tooltip" title="Reject">
+																							<span class="orange">
+																								<i class="icon-remove bigger-110"></i>
+																							</span>
+                                                                        </a>
+                                                                    </li>
 
-                            <div id="forgot-box" class="forgot-box widget-box no-border">
-                                <div class="widget-body">
-                                    <div class="widget-main">
-                                        <h4 class="header red lighter bigger">
-                                            <i class="icon-key"></i>
-                                            Retrieve Password
-                                        </h4>
-
-                                        <div class="space-6"></div>
-                                        <p>
-                                            Enter your email and to receive instructions
-                                        </p>
-
-                                        <form>
-                                            <fieldset>
-                                                <label class="block clearfix">
-														<span class="block input-icon input-icon-right">
-															<input type="email" class="form-control" placeholder="Email" />
-															<i class="icon-envelope"></i>
-														</span>
-                                                </label>
-
-                                                <div class="clearfix">
-                                                    <button type="button" class="width-35 pull-right btn btn-sm btn-danger">
-                                                        <i class="icon-lightbulb"></i>
-                                                        Send Me!
-                                                    </button>
+                                                                    <li>
+                                                                        <a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
+																							<span class="red">
+																								<i class="icon-trash bigger-110"></i>
+																							</span>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                            </fieldset>
-                                        </form>
-                                    </div><!-- /widget-main -->
 
-                                    <div class="toolbar center">
-                                        <a href="#" onclick="show_box('login-box'); return false;" class="back-to-login-link">
-                                            Back to login
-                                            <i class="icon-arrow-right"></i>
-                                        </a>
-                                    </div>
-                                </div><!-- /widget-body -->
-                            </div><!-- /forgot-box -->
+                                                <div class="itemdiv memberdiv">
+                                                    <div class="user">
+                                                        <img alt="Jim Doe's avatar" src="{{asset('statics/admin/assets/avatars/avatar.png')}}" />
+                                                    </div>
 
-                            <div id="signup-box" class="signup-box widget-box no-border">
-                                <div class="widget-body">
-                                    <div class="widget-main">
-                                        <h4 class="header green lighter bigger">
-                                            <i class="icon-group blue"></i>
-                                            New User Registration
-                                        </h4>
+                                                    <div class="body">
+                                                        <div class="name">
+                                                            <a href="#">Jim Doe</a>
+                                                        </div>
 
-                                        <div class="space-6"></div>
-                                        <p> Enter your details to begin: </p>
+                                                        <div class="time">
+                                                            <i class="icon-time"></i>
+                                                            <span class="green">2 hour</span>
+                                                        </div>
 
-                                        <form>
-                                            <fieldset>
-                                                <label class="block clearfix">
-														<span class="block input-icon input-icon-right">
-															<input type="email" class="form-control" placeholder="Email" />
-															<i class="icon-envelope"></i>
-														</span>
-                                                </label>
+                                                        <div>
+                                                            <span class="label label-warning label-sm">pending</span>
 
-                                                <label class="block clearfix">
-														<span class="block input-icon input-icon-right">
-															<input type="text" class="form-control" placeholder="Username" />
-															<i class="icon-user"></i>
-														</span>
-                                                </label>
+                                                            <div class="inline position-relative">
+                                                                <button class="btn btn-minier bigger btn-yellow btn-no-border dropdown-toggle" data-toggle="dropdown">
+                                                                    <i class="icon-angle-down icon-only bigger-120"></i>
+                                                                </button>
 
-                                                <label class="block clearfix">
-														<span class="block input-icon input-icon-right">
-															<input type="password" class="form-control" placeholder="Password" />
-															<i class="icon-lock"></i>
-														</span>
-                                                </label>
+                                                                <ul class="dropdown-menu dropdown-only-icon dropdown-yellow pull-right dropdown-caret dropdown-close">
+                                                                    <li>
+                                                                        <a href="#" class="tooltip-success" data-rel="tooltip" title="Approve">
+																							<span class="green">
+																								<i class="icon-ok bigger-110"></i>
+																							</span>
+                                                                        </a>
+                                                                    </li>
 
-                                                <label class="block clearfix">
-														<span class="block input-icon input-icon-right">
-															<input type="password" class="form-control" placeholder="Repeat password" />
-															<i class="icon-retweet"></i>
-														</span>
-                                                </label>
+                                                                    <li>
+                                                                        <a href="#" class="tooltip-warning" data-rel="tooltip" title="Reject">
+																							<span class="orange">
+																								<i class="icon-remove bigger-110"></i>
+																							</span>
+                                                                        </a>
+                                                                    </li>
 
-                                                <label class="block">
-                                                    <input type="checkbox" class="ace" />
-                                                    <span class="lbl">
-															I accept the
-															<a href="#">User Agreement</a>
-														</span>
-                                                </label>
-
-                                                <div class="space-24"></div>
-
-                                                <div class="clearfix">
-                                                    <button type="reset" class="width-30 pull-left btn btn-sm">
-                                                        <i class="icon-refresh"></i>
-                                                        Reset
-                                                    </button>
-
-                                                    <button type="button" class="width-65 pull-right btn btn-sm btn-success">
-                                                        Register
-                                                        <i class="icon-arrow-right icon-on-right"></i>
-                                                    </button>
+                                                                    <li>
+                                                                        <a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
+																							<span class="red">
+																								<i class="icon-trash bigger-110"></i>
+																							</span>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                            </fieldset>
-                                        </form>
+
+                                                <div class="itemdiv memberdiv">
+                                                    <div class="user">
+                                                        <img alt="Alex Doe's avatar" src="{{asset('statics/admin/assets/avatars/avatar5.png')  }}" />
+                                                    </div>
+
+                                                    <div class="body">
+                                                        <div class="name">
+                                                            <a href="#">Alex Doe</a>
+                                                        </div>
+
+                                                        <div class="time">
+                                                            <i class="icon-time"></i>
+                                                            <span class="green">3 hour</span>
+                                                        </div>
+
+                                                        <div>
+                                                            <span class="label label-danger label-sm">blocked</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="itemdiv memberdiv">
+                                                    <div class="user">
+                                                        <img alt="Bob Doe's avatar" src="{{asset('statics/admin/assets/avatars/avatar2.png')}}" />
+                                                    </div>
+
+                                                    <div class="body">
+                                                        <div class="name">
+                                                            <a href="#">Bob Doe</a>
+                                                        </div>
+
+                                                        <div class="time">
+                                                            <i class="icon-time"></i>
+                                                            <span class="green">6 hour</span>
+                                                        </div>
+
+                                                        <div>
+                                                            <span class="label label-success label-sm arrowed-in">approved</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="itemdiv memberdiv">
+                                                    <div class="user">
+                                                        <img alt="Susan's avatar" src="{{ asset('statics/admin/assets/avatars/avatar3.png') }}" />
+                                                    </div>
+
+                                                    <div class="body">
+                                                        <div class="name">
+                                                            <a href="#">Susan</a>
+                                                        </div>
+
+                                                        <div class="time">
+                                                            <i class="icon-time"></i>
+                                                            <span class="green">yesterday</span>
+                                                        </div>
+
+                                                        <div>
+                                                            <span class="label label-success label-sm arrowed-in">approved</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="itemdiv memberdiv">
+                                                    <div class="user">
+                                                        <img alt="Phil Doe's avatar" src="{{ asset('statics/admin/assets/avatars/avatar4.png') }}" />
+                                                    </div>
+
+                                                    <div class="body">
+                                                        <div class="name">
+                                                            <a href="#">Phil Doe</a>
+                                                        </div>
+
+                                                        <div class="time">
+                                                            <i class="icon-time"></i>
+                                                            <span class="green">2 days ago</span>
+                                                        </div>
+
+                                                        <div>
+                                                            <span class="label label-info label-sm arrowed-in arrowed-in-right">online</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="itemdiv memberdiv">
+                                                    <div class="user">
+                                                        <img alt="Alexa Doe's avatar" src="{{asset('statics/admin/assets/avatars/avatar1.png')}}" />
+                                                    </div>
+
+                                                    <div class="body">
+                                                        <div class="name">
+                                                            <a href="#">Alexa Doe</a>
+                                                        </div>
+
+                                                        <div class="time">
+                                                            <i class="icon-time"></i>
+                                                            <span class="green">3天以前</span>
+                                                        </div>
+
+                                                        <div>
+                                                            <span class="label label-success label-sm arrowed-in">approved</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="center">
+                                                <i class="icon-group icon-2x green"></i>
+
+                                                &nbsp;
+                                                <a href="#">
+                                                    查看所有会员 &nbsp;
+                                                    <i class="icon-arrow-right"></i>
+                                                </a>
+                                            </div>
+
+                                            <div class="hr hr-double hr8"></div>
+                                        </div><!-- member-tab -->
+
+                                        <div id="comment-tab" class="tab-pane">
+                                            <div class="comments">
+                                                <div class="itemdiv commentdiv">
+                                                    <div class="user">
+                                                        <img alt="Bob Doe's Avatar" src="{{ asset('statics/admin/assets/avatars/avatar.png')  }}" />
+                                                    </div>
+
+                                                    <div class="body">
+                                                        <div class="name">
+                                                            <a href="#">Bob Doe</a>
+                                                        </div>
+
+                                                        <div class="time">
+                                                            <i class="icon-time"></i>
+                                                            <span class="green">6 min</span>
+                                                        </div>
+
+                                                        <div class="text">
+                                                            <i class="icon-quote-left"></i>
+                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo massa sed ipsum porttitor facilisis &hellip;
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="tools">
+                                                        <div class="inline position-relative">
+                                                            <button class="btn btn-minier bigger btn-yellow dropdown-toggle" data-toggle="dropdown">
+                                                                <i class="icon-angle-down icon-only bigger-120"></i>
+                                                            </button>
+
+                                                            <ul class="dropdown-menu dropdown-only-icon dropdown-yellow pull-right dropdown-caret dropdown-close">
+                                                                <li>
+                                                                    <a href="#" class="tooltip-success" data-rel="tooltip" title="Approve">
+																						<span class="green">
+																							<i class="icon-ok bigger-110"></i>
+																						</span>
+                                                                    </a>
+                                                                </li>
+
+                                                                <li>
+                                                                    <a href="#" class="tooltip-warning" data-rel="tooltip" title="Reject">
+																						<span class="orange">
+																							<i class="icon-remove bigger-110"></i>
+																						</span>
+                                                                    </a>
+                                                                </li>
+
+                                                                <li>
+                                                                    <a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
+																						<span class="red">
+																							<i class="icon-trash bigger-110"></i>
+																						</span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="itemdiv commentdiv">
+                                                    <div class="user">
+                                                        <img alt="Jennifer's Avatar" src="{{ asset('statics/admin/assets/avatars/avatar1.png')  }}" />
+                                                    </div>
+
+                                                    <div class="body">
+                                                        <div class="name">
+                                                            <a href="#">Jennifer</a>
+                                                        </div>
+
+                                                        <div class="time">
+                                                            <i class="icon-time"></i>
+                                                            <span class="blue">15 min</span>
+                                                        </div>
+
+                                                        <div class="text">
+                                                            <i class="icon-quote-left"></i>
+                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo massa sed ipsum porttitor facilisis &hellip;
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="tools">
+                                                        <div class="action-buttons bigger-125">
+                                                            <a href="#">
+                                                                <i class="icon-pencil blue"></i>
+                                                            </a>
+
+                                                            <a href="#">
+                                                                <i class="icon-trash red"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="itemdiv commentdiv">
+                                                    <div class="user">
+                                                        <img alt="Joe's Avatar" src="{{asset('statics/admin/assets/avatars/avatar2.png')}}" />
+                                                    </div>
+
+                                                    <div class="body">
+                                                        <div class="name">
+                                                            <a href="#">Joe</a>
+                                                        </div>
+
+                                                        <div class="time">
+                                                            <i class="icon-time"></i>
+                                                            <span class="orange">22 min</span>
+                                                        </div>
+
+                                                        <div class="text">
+                                                            <i class="icon-quote-left"></i>
+                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo massa sed ipsum porttitor facilisis &hellip;
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="tools">
+                                                        <div class="action-buttons bigger-125">
+                                                            <a href="#">
+                                                                <i class="icon-pencil blue"></i>
+                                                            </a>
+
+                                                            <a href="#">
+                                                                <i class="icon-trash red"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="itemdiv commentdiv">
+                                                    <div class="user">
+                                                        <img alt="Rita's Avatar" src="{{asset('statics/admin/assets/avatars/avatar3.png')}}" />
+                                                    </div>
+
+                                                    <div class="body">
+                                                        <div class="name">
+                                                            <a href="#">Rita</a>
+                                                        </div>
+
+                                                        <div class="time">
+                                                            <i class="icon-time"></i>
+                                                            <span class="red">50 min</span>
+                                                        </div>
+
+                                                        <div class="text">
+                                                            <i class="icon-quote-left"></i>
+                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo massa sed ipsum porttitor facilisis &hellip;
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="tools">
+                                                        <div class="action-buttons bigger-125">
+                                                            <a href="#">
+                                                                <i class="icon-pencil blue"></i>
+                                                            </a>
+
+                                                            <a href="#">
+                                                                <i class="icon-trash red"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="hr hr8"></div>
+
+                                            <div class="center">
+                                                <i class="icon-comments-alt icon-2x green"></i>
+
+                                                &nbsp;
+                                                <a href="#">
+                                                    See all comments &nbsp;
+                                                    <i class="icon-arrow-right"></i>
+                                                </a>
+                                            </div>
+
+                                            <div class="hr hr-double hr8"></div>
+                                        </div>
+                                    </div>
+                                </div><!-- /widget-main -->
+                            </div><!-- /widget-body -->
+                        </div><!-- /widget-box -->
+                    </div><!-- /span -->
+
+                    <div class="col-sm-6">
+                        <div class="widget-box ">
+                            <div class="widget-header">
+                                <h4 class="lighter smaller">
+                                    <i class="icon-comment blue"></i>
+                                    会话
+                                </h4>
+                            </div>
+
+                            <div class="widget-body">
+                                <div class="widget-main no-padding">
+                                    <div class="dialogs">
+                                        <div class="itemdiv dialogdiv">
+                                            <div class="user">
+                                                <img alt="Alexa's Avatar" src="{{ asset('statics/admin/assets/avatars/avatar1.png') }}" />
+                                            </div>
+
+                                            <div class="body">
+                                                <div class="time">
+                                                    <i class="icon-time"></i>
+                                                    <span class="green">4秒钟前</span>
+                                                </div>
+
+                                                <div class="name">
+                                                    <a href="#">Alexa</a>
+                                                </div>
+                                                <div class="text">大家好啊</div>
+
+                                                <div class="tools">
+                                                    <a href="#" class="btn btn-minier btn-info">
+                                                        <i class="icon-only icon-share-alt"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="itemdiv dialogdiv">
+                                            <div class="user">
+                                                <img alt="John's Avatar" src="{{asset('statics/admin/assets/avatars/avatar.png')}}" />
+                                            </div>
+
+                                            <div class="body">
+                                                <div class="time">
+                                                    <i class="icon-time"></i>
+                                                    <span class="blue">38秒以前</span>
+                                                </div>
+
+                                                <div class="name">
+                                                    <a href="#">John</a>
+                                                </div>
+                                                <div class="text">框架很好用嘛</div>
+
+                                                <div class="tools">
+                                                    <a href="#" class="btn btn-minier btn-info">
+                                                        <i class="icon-only icon-share-alt"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="itemdiv dialogdiv">
+                                            <div class="user">
+                                                <img alt="Bob's Avatar" src="{{asset('statics/admin/assets/avatars/user.jpg')}}" />
+                                            </div>
+
+                                            <div class="body">
+                                                <div class="time">
+                                                    <i class="icon-time"></i>
+                                                    <span class="orange">2分钟以前</span>
+                                                </div>
+
+                                                <div class="name">
+                                                    <a href="#">Bob</a>
+                                                    <span class="label label-info arrowed arrowed-in-right">admin</span>
+                                                </div>
+                                                <div class="text">欢迎大家使用ACE后台管理系统.</div>
+
+                                                <div class="tools">
+                                                    <a href="#" class="btn btn-minier btn-info">
+                                                        <i class="icon-only icon-share-alt"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="itemdiv dialogdiv">
+                                            <div class="user">
+                                                <img alt="Jim's Avatar" src="{{asset('statics/admin/assets/avatars/avatar4.png')}}" />
+                                            </div>
+
+                                            <div class="body">
+                                                <div class="time">
+                                                    <i class="icon-time"></i>
+                                                    <span class="grey">3分钟以前</span>
+                                                </div>
+
+                                                <div class="name">
+                                                    <a href="#">Jim</a>
+                                                </div>
+                                                <div class="text">大家多提提BUG</div>
+
+                                                <div class="tools">
+                                                    <a href="#" class="btn btn-minier btn-info">
+                                                        <i class="icon-only icon-share-alt"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="itemdiv dialogdiv">
+                                            <div class="user">
+                                                <img alt="Alexa's Avatar" src="{{asset('statics/admin/assets/avatars/avatar1.png')}}" />
+                                            </div>
+
+                                            <div class="body">
+                                                <div class="time">
+                                                    <i class="icon-time"></i>
+                                                    <span class="green">4分钟以前</span>
+                                                </div>
+
+                                                <div class="name">
+                                                    <a href="#">Alexa</a>
+                                                </div>
+                                                <div class="text">继续支持ACE后台系统</div>
+
+                                                <div class="tools">
+                                                    <a href="#" class="btn btn-minier btn-info">
+                                                        <i class="icon-only icon-share-alt"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
 
-                                    <div class="toolbar center">
-                                        <a href="#" onclick="show_box('login-box'); return false;" class="back-to-login-link">
-                                            <i class="icon-arrow-left"></i>
-                                            Back to login
-                                        </a>
-                                    </div>
-                                </div><!-- /widget-body -->
-                            </div><!-- /signup-box -->
-                        </div><!-- /position-relative -->
-                    </div>
-                </div><!-- /.col -->
-            </div><!-- /.row -->
-        </div>
-    </div><!-- /.main-container -->
+                                    <form>
+                                        <div class="form-actions">
+                                            <div class="input-group">
+                                                <input placeholder="Type your message here ..." type="text" class="form-control" name="message" />
+                                                <span class="input-group-btn">
+																	<button class="btn btn-sm btn-info no-radius" type="button">
+																		<i class="icon-share-alt"></i>
+																		发送
+																	</button>
+																</span>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div><!-- /widget-main -->
+                            </div><!-- /widget-body -->
+                        </div><!-- /widget-box -->
+                    </div><!-- /span -->
+                </div><!-- /row -->
 
-    </body>
+                <!-- PAGE CONTENT ENDS -->
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.page-content -->
 @endsection
 
-@section('js')
-    <!-- basic scripts -->
 
-    <!--[if !IE]> -->
-
-    <script src="http://apps.bdimg.com/libs/jquery/2.0.3/jquery.min.js"></script>
-
-    <!-- <![endif]-->
-
-    <!--[if IE]>
-    <script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
-    <![endif]-->
-
-    <!--[if !IE]> -->
-
-    <script type="text/javascript">
-        window.jQuery || document.write("<script src='assets/js/jquery-2.0.3.min.js'>"+"<"+"/script>");
-    </script>
-
-    <!-- <![endif]-->
-
-    <!--[if IE]>
-    <script type="text/javascript">
-        window.jQuery || document.write("<script src='assets/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
-    </script>
-    <![endif]-->
-
-    <script type="text/javascript">
-        if("ontouchend" in document) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
-    </script>
-
-    <!-- inline scripts related to this page -->
-
-    <script type="text/javascript">
-        function show_box(id) {
-            jQuery('.widget-box.visible').removeClass('visible');
-            jQuery('#'+id).addClass('visible');
-        }
-    </script>
-    <div style="display:none"><script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
-
-@endsection
 
 

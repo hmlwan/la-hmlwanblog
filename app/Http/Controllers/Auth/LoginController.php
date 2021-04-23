@@ -48,6 +48,7 @@ class LoginController extends Controller
             'name.required' => '请输入用户名',
             'password.required' => '请输入密码',
         );
+        return redirect()->intended(url('admin/index/index'));
         $request->validate([
             'name' => 'required',
             'password' => 'required',
