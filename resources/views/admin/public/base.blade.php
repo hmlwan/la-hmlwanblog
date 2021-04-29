@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{ URL::asset('statics/admin/assets/css/ace.min.css')  }}" />
     <link rel="stylesheet" href="{{ URL::asset('statics/admin/assets/css/ace-rtl.min.css')  }}" />
     <link rel="stylesheet" href="{{ URL::asset('statics/admin/assets/css/ace-skins.min.css')  }}" />
+    <link rel="stylesheet" href="{{ URL::asset('layui-v2.6.3/layui/css/layui.css')  }}" />
 
     <script src="{{ URL::asset('statics/admin/assets/js/ace-extra.min.js')  }}"></script>
     @yield('css')
@@ -75,6 +76,8 @@
 
 <script src="{{URL::asset('statics/admin/assets/js/ace-elements.min.js')}}"></script>
 <script src="{{URL::asset('statics/admin/assets/js/ace.min.js')}}"></script>
+<script src="{{URL::asset('layui-v2.6.3/layui/layui.js')}}"></script>
+<script src="{{URL::asset('statics/common/main.js')}}"></script>
 
 <script>
     $(function () {

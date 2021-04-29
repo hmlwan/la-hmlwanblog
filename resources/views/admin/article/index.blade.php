@@ -55,6 +55,7 @@
                             </th>
                             <th>分类</th>
                             <th>标题</th>
+                            <th>关键字</th>
                             <th>作者</th>
                             <th>点击数</th>
                             <th>封面</th>
@@ -73,6 +74,7 @@
                                 </td>
                                 <td>{{$v->category_name}}</td>
                                 <td>{{$v->title}}</td>
+                                <td>{{$v->keywords}}</td>
                                 <td>{{$v->author}}</td>
                                 <td>{{$v->views}}</td>
                                 <td><img src="{{asset($v->cover)}}" style="width: 100px;height: 80px" alt=""></td>

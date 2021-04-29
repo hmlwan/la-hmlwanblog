@@ -12,6 +12,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//Home 模块
+Route::name('home.')->group(function (){
+    Route::get('/',"Home\IndexController@index")->name('home.index');
+    Route::get('article/cid/{cid}','Home\ArticleController@show')->name('article.show');
+    Route::get('article/aid/{aid}','Home\ArticleController@read')->name('article.read');
+    Route::prefix('home')->group(function (){
+        //首页
+        Route::get('index','Home\IndexController@index')->name('home.index');
+        //关于
+        Route::get('about','Home\IndexController@about')->name('home.about');
+        //留言
+        Route::get('message','Home\IndexController@message')->name('home.message');
+        //友链
+        Route::get('link','Home\IndexController@link')->name('home.link');
+        //时间轴
+        Route::get('times','Home\IndexController@times')->name('home.times');
+    });
+});
+
+
 //Admin 模块 无需auth验证
 Route::prefix('admin')->group(function(){
     Route::redirect('/',url('admin/login/index'));
@@ -63,6 +83,8 @@ Route::prefix('admin')->group(function (){
         //编辑
         Route::get('edit_view/{id}','Admin\ArticleController@edit_view');
         Route::post('update','Admin\ArticleController@update');
+        //上传图片
+        Route::post('uploadImage','Admin\ArticleController@uploadImage');
 
         //删除
         Route::get('del/{id}','Admin\ArticleController@del');
@@ -73,7 +95,16 @@ Route::prefix('admin')->group(function (){
     });
     //系统配置
     Route::prefix('config')->group(function(){
-
+        //列表
+        Route::get('index','Admin\ConfigController@index');
+        //添加
+        Route::get('create_view','Admin\ConfigController@create_view');
+        Route::post('store','Admin\ConfigController@store');
+        //编辑
+        Route::get('edit_view/{id}','Admin\ConfigController@edit_view');
+        Route::post('update','Admin\ConfigController@update');
+        //删除
+        Route::get('del/{id}','Admin\ConfigController@del');
     });
     //标签管理
     Route::prefix('tag')->group(function(){
@@ -99,10 +130,28 @@ Route::prefix('admin')->group(function (){
     });
     //友情链接管理
     Route::prefix('friendshiplink')->group(function(){
-
+        //列表
+        Route::get('index','Admin\FrendshiplinkController@index');
+        //添加
+        Route::get('create_view','Admin\FrendshiplinkController@create_view');
+        Route::post('store','Admin\FrendshiplinkController@store');
+        //编辑
+        Route::get('edit_view/{id}','Admin\FrendshiplinkController@edit_view');
+        Route::post('update','Admin\FrendshiplinkController@update');
+        //删除
+        Route::get('del/{id}','Admin\FrendshiplinkController@del');
     });
     //评论管理
     Route::prefix('comment')->group(function(){
-
+//列表
+        Route::get('index','Admin\CommentController@index');
+        //添加
+        Route::get('create_view','Admin\CommentController@create_view');
+        Route::post('store','Admin\CommentController@store');
+        //编辑
+        Route::get('edit_view/{id}','Admin\CommentController@edit_view');
+        Route::post('update','Admin\CommentController@update');
+        //删除
+        Route::get('del/{id}','Admin\CommentController@del');
     });
 });

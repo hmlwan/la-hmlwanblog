@@ -10,7 +10,7 @@
                 <a href="#" class="navbar-brand">
                     <small>
                         <i class="icon-leaf"></i>
-                        HMLWAN后台管理系统
+                        HMLWAN 后台管理系统
                     </small>
                 </a><!-- /.brand -->
             </div><!-- /.navbar-header -->

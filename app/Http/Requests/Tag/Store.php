@@ -27,7 +27,7 @@ class Store extends FormRequest
            'name'=>'required|unique:tags'
         ];
     }
-    public function message(){
+    public function messages(){
         return array(
             'name.required'=> '名称不能为空',
             'name.unique'=> '名称已存在',

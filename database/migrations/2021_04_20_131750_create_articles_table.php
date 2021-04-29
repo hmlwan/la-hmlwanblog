@@ -25,6 +25,7 @@ class CreateArticlesTable extends Migration
             $table->string('keywords')->default('')->comment('关键字');
             $table->string('cover')->default('')->comment('封面');
             $table->integer('views')->default(0)->comment('点击数');
+            $table->integer('loves')->default(0)->comment('点赞数');
             $table->unsignedTinyInteger('is_top')->default(0)->comment('是否置顶0:否 1:是');
             $table->unsignedTinyInteger('status')->default(1)->comment('状态 0：下架 1：发布 ');
             $table->timestamps();

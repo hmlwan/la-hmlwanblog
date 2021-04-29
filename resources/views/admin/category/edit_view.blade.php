@@ -1,6 +1,6 @@
 @extends('admin.public.admin')
 
-@section('title','编辑')
+@section('title','导航')
 
 @section('page-content')
     <div class="page-header">

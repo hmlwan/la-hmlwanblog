@@ -74,7 +74,7 @@
                                 <td>{{$v->sort}}</td>
                                 <td>{{$v->keywords}}</td>
                                 <td>
-                                    @if($v->status == 1)
+                                    @if($v->status =1)
                                         <button class="btn btn-xs btn-primary">发布中</button>
                                     @else
                                         <button class="btn btn-xs">下架中 </button>
@@ -100,12 +100,14 @@
                                                 </button>
                                             </a>
                                         @else
-                                            <a onclick="return confirm('确定要发布？')"   href="{{ url('/admin/category/pub',array('id'=>$v->id)) }}">
+                                            <a onclick="return confirm('确定要发布？')"    href="{{ url('/admin/category/pub',array('id'=>$v->id)) }}">
                                                 <button class="btn btn-xs btn-pink">
                                                     <i class="icon-thumbs-up bigger-120"></i>
                                                 </button>
                                             </a>
                                         @endif
+
+
                                     </div>
                                     <div class="visible-xs visible-sm hidden-md hidden-lg">
                                         <div class="inline position-relative">
