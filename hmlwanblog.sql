@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50726
 File Encoding         : 65001
 
-Date: 2021-04-29 21:13:16
+Date: 2021-04-30 22:18:30
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -41,8 +41,8 @@ CREATE TABLE `zh_articles` (
 -- ----------------------------
 -- Records of zh_articles
 -- ----------------------------
-INSERT INTO `zh_articles` VALUES ('1', '3', '测试1', '1', 'hmlwan', '测试测试11', '403\r\nThis action is unauthorized.', 'php', '/uploads/article/20210425/PkQV7QfSTWNgrLRO10DA54Y24zFqD5DHwf4kbH3H.png', '1', '1', '2021-04-25 12:39:47', '2021-04-25 12:39:47', '0', null);
-INSERT INTO `zh_articles` VALUES ('2', '3', '测试2', '2', 'hmlwan', '测试测试22', 'php', 'php', '/uploads/article/20210425/BFRd8W8ArKSRNlfR259o5C1bebpZ60CtgDoYgheK.png', '0', '1', null, null, '0', null);
+INSERT INTO `zh_articles` VALUES ('1', '3', '测试1', '1', 'hmlwan', '测试测试11\r\n```php\r\n  $info = Article::findOrFail($aid);\r\n  $data = compact(\'info\');\r\n  return view(\'home.article.read\',$data);\r\n```\r\n:smile:', '测试1', 'php', '/uploads/article/20210425/PkQV7QfSTWNgrLRO10DA54Y24zFqD5DHwf4kbH3H.png', '1', '1', '2021-04-25 12:39:47', '2021-04-25 12:39:47', '2', null);
+INSERT INTO `zh_articles` VALUES ('2', '4', '测试2', '2', 'hmlwan', '测试测试22', '测试2', 'php', '/uploads/article/20210425/BFRd8W8ArKSRNlfR259o5C1bebpZ60CtgDoYgheK.png', '0', '1', null, null, '10', null);
 
 -- ----------------------------
 -- Table structure for `zh_categories`

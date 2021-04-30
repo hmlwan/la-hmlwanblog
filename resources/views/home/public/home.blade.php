@@ -14,12 +14,12 @@
                 <a href="javascript:void(0)" class="header-logo" id="logo">{{strtoupper(config('WEB_AUTHOR'))}}</a>
                 <nav class="nav" id="nav">
                     <ul>
-                        <li><a href="{{url('/')}}">首页</a></li>
-                        <li><a href="{{url('article/cid/2')}}">博客</a></li>
-                        <li><a href="{{url('home/message')}}">留言</a></li>
-                        <li><a href="{{url('home/times')}}">闲言碎语</a></li>
-                        <li><a href="{{url('home/link')}}">友链</a></li>
-                        <li><a href="{{url('home/about')}}">关于</a></li>
+                        <li @if( request()->route()->getName() == 'home.index') class="current" @endif><a href="{{url('/')}}">首页</a></li>
+                        <li  @if( request()->route()->getName() == 'home.article.show' ||request()->route()->getName() == 'home.article.read' ) class="current" @endif><a href="{{url('article/cid/0')}}">博客</a></li>
+                        <li  @if( request()->route()->getName() == 'home.message') class="current" @endif ><a href="{{url('home/message')}}">留言</a></li>
+                        <li  @if( request()->route()->getName() == 'home.times') class="current" @endif ><a href="{{url('home/times')}}">闲言碎语</a></li>
+                        <li  @if( request()->route()->getName() == 'home.link') class="current" @endif ><a href="{{url('home/link')}}">友链</a></li>
+                        <li  @if( request()->route()->getName() == 'home.about') class="current" @endif ><a href="{{url('home/about')}}">关于</a></li>
                     </ul>
                 </nav>
                 <a href="/User/QQLogin" class="blog-user">

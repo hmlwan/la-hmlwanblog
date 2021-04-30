@@ -50,7 +50,7 @@ function sendCode(target) {
     $("#cbox").show();
 
     loading(true)
-   
+
     $.post(url, {mobile: mobile,img_code:img_code}, function (data) {
         loading(false);
        layer.msg(data.msg);
@@ -309,8 +309,8 @@ function lazy_loading(url,elem,mb,ent_con) {
                 $.get(url,{p:page},function(data){
                     var d = data;
                     console.log(d);
-                    var totalRows = d['count']['totalRows'];
-                    var listRows = d['count']['listRows'];
+                    var totalRows = d['contents']['total'];
+                    var listRows = d['contents']['per_page'];
                     var p_num = listRows*page;
                     next(d.content,p_num<totalRows);
                 });

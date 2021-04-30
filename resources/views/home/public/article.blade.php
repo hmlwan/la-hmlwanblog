@@ -25,7 +25,7 @@
                         <li data-index="0" class="slider"></li>
                         <li data-index="1" @if(request('cid') == 0) class="current" @endif ><a href="{{url('article/cid',array('cid'=>0))}}">全部文章</a></li>
                         @foreach($cates as $k => $cate)
-                            <li data-index="{{$k+2}}" @if(request('cid') == $cate->id) class="current" @endif><a target="_blank" href="{{url('article/cid',array('cid'=>$cate->id))}}">{{$cate->name}}</a></li>
+                            <li data-index="{{$k+2}}" @if(request('cid') == $cate->id) class="current" @endif><a href="{{url('article/cid',array('cid'=>$cate->id))}}">{{$cate->name}}</a></li>
                         @endforeach
                     </ul>
                 </div>

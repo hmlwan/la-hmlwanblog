@@ -22,6 +22,7 @@
 @yield('footer')
 
 </html>
+
 <script src="{{URL::asset('statics/home/assets/layui/layui.js')}}"></script>
 <script src="{{URL::asset('statics/home/assets/js/wow.min.js')}}"></script>
 <script src="{{URL::asset('statics/home/assets/js/index.js')}}"></script>
@@ -30,6 +31,7 @@
 
 <script src="{{ URL::asset('statics/home/assets/js/yss/article.js')}}"></script>
 <script src="{{ URL::asset('statics/home/assets/js/pagecomment.js')}}"></script>
+<script src="{{ URL::asset('statics/common/main.js')}}"></script>
 <script>NProgress.start();</script>
 <script>
     window.onload = function () {

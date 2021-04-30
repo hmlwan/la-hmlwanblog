@@ -14,20 +14,20 @@ use Illuminate\Support\Facades\Route;
 
 //Home 模块
 Route::name('home.')->group(function (){
-    Route::get('/',"Home\IndexController@index")->name('home.index');
+    Route::get('/',"Home\IndexController@index")->name('index');
     Route::get('article/cid/{cid}','Home\ArticleController@show')->name('article.show');
     Route::get('article/aid/{aid}','Home\ArticleController@read')->name('article.read');
     Route::prefix('home')->group(function (){
         //首页
-        Route::get('index','Home\IndexController@index')->name('home.index');
+        Route::get('index','Home\IndexController@index')->name('index');
         //关于
-        Route::get('about','Home\IndexController@about')->name('home.about');
+        Route::get('about','Home\IndexController@about')->name('about');
         //留言
-        Route::get('message','Home\IndexController@message')->name('home.message');
+        Route::get('message','Home\IndexController@message')->name('message');
         //友链
-        Route::get('link','Home\IndexController@link')->name('home.link');
+        Route::get('link','Home\IndexController@link')->name('link');
         //时间轴
-        Route::get('times','Home\IndexController@times')->name('home.times');
+        Route::get('times','Home\IndexController@times')->name('times');
     });
 });
 
