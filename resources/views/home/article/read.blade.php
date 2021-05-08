@@ -22,8 +22,10 @@
                             <span class="month fs-18">{{ $info->created_at ? date("m",strtotime($info->created_at)):  date("m",time())}}<small class="fs-14">月</small></span>
                             <span class="year fs-18">{{ $info->created_at ? date("Y",strtotime($info->created_at)):  date("Y",time())}}</span>
                         </div>
-                        <div class="content artiledetail" style="border-bottom: 1px solid #e1e2e0; padding-bottom: 20px;">
-                            {{$info->markdown }}
+                        <div class="content artiledetail " style="border-bottom: 1px solid #e1e2e0; padding-bottom: 20px;">
+                            <div class="js-content">
+                                {!! $info->html !!}
+                            </div>
                             <div class="copyright mt20">
                                 <p class="f-toe fc-black">
                                     非特殊说明，本文版权归 {{config('WEB_AUTHOR')}} 所有，转载请注明出处.

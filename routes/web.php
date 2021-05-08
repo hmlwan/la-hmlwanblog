@@ -29,6 +29,8 @@ Route::name('home.')->group(function (){
         //时间轴
         Route::get('times','Home\IndexController@times')->name('times');
     });
+    Route::get('redistest','Home\RedisController@test');
+    Route::get('redis_mutex_lock','Home\RedisController@redis_mutex_lock');
 });
 
 

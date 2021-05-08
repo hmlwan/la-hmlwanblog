@@ -4,6 +4,12 @@
 @section('css')
     <link rel="stylesheet" href="{{URL::asset('statics/home/assets/css/master.css')}}" />
     <link rel="stylesheet" href="{{URL::asset('statics/home/assets/css/blog.css')}}" />
+    <link rel="stylesheet" href="{{ asset('statics/home/assets/css/app.css') }}">
+    <style>
+    .js-content .emoji{
+        width: 30px;
+    }
+    </style>
 @endsection
 @section('body')
     <div class="header">
@@ -26,12 +32,11 @@
                     <i class="fa fa-qq"></i>
                 </a>
                 <a class="phone-menu">
+
                     <i></i>
                     <i></i>
                     <i></i>
-                    <i></i>
-                    <i></i>
-                    <i></i>
+
                 </a>
             </div>
         </div>
@@ -92,4 +97,13 @@
             </div>
         </div>
     </footer>
+@endsection
+@section('js')
+    <script src="{{ URL::asset('statics/common/jquery-2.0.3.min.js')}}"></script>
+    <script src="{{URL:: asset('statics/home/assets/js/app.js') }}"></script>
+
+    <script type="text/javascript">
+        $('pre').addClass('line-numbers');
+        emojify.run(document.querySelector('.js-content'));
+    </script>
 @endsection

@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Home;
 use App\Http\Controllers\Controller;
 use App\Models\Article;
 use Illuminate\Http\Request;
-
+use GrahamCampbell\Markdown\Facades\Markdown;
 
 class ArticleController extends Controller
 {
@@ -38,6 +38,9 @@ class ArticleController extends Controller
     }
     public function read(Request $request ,$aid){
         $info = Article::findOrFail($aid);
+
+        $info->html = Markdown::convertToHtml($info->markdown);
+
         $data = compact('info');
         return view('home.article.read',$data);
     }

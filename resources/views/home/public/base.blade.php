@@ -6,6 +6,7 @@
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width" />
     <meta name="robots" content="all" />
+    <meta name="csrf-token" content="{{csrf_token()}}" />
     <title>@yield('title')</title>
     <link href="{{URL::asset('statics/home/assets/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{URL::asset('statics/home/assets/layui/css/layui.css')}}" rel="stylesheet" type="text/css">
@@ -33,9 +34,15 @@
 <script src="{{ URL::asset('statics/home/assets/js/pagecomment.js')}}"></script>
 <script src="{{ URL::asset('statics/common/main.js')}}"></script>
 <script>NProgress.start();</script>
+<script src="{{ URL::asset('statics/common/jquery-2.0.3.min.js')}}"></script>
 <script>
     window.onload = function () {
         NProgress.done();
     };
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
 </script>
 @yield('js')
