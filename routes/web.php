@@ -28,10 +28,30 @@ Route::name('home.')->group(function (){
         Route::get('link','Home\IndexController@link')->name('link');
         //时间轴
         Route::get('times','Home\IndexController@times')->name('times');
+
     });
-    Route::get('redistest','Home\RedisController@test');
-    Route::get('redis_mutex_lock','Home\RedisController@redis_mutex_lock');
+   Route::prefix('chat')->name('chat.')->group(function (){
+       //聊天室
+       Route::get('index/{room_id}','Workerman\ChatController@index')->name('index');
+       //初始化
+       Route::post('init','Workerman\ChatController@init')->name('init');
+       Route::post('reg','Workerman\ChatController@reg')->name('reg');
+       //聊天
+       Route::post('say','Workerman\ChatController@say')->name('say');
+
+   });
+
+    Route::get('redistest','Redis\RedisController@test');
+    Route::get('redis_mutex_lock','Redis\RedisController@redis_mutex_lock');
+    Route::get('redis/super_sell/index','Redis\RedisController@super_sell_index');
+    Route::get('redis/super_sell/order','Redis\RedisController@super_sell_order');
+    Route::get('redis/publish','Redis\RedisController@publish');
+    Route::get('redis/subscribe','Redis\RedisController@subscribe');
+
+    Route::get('test/index','Home\testController@index');
 });
+
+
 
 
 //Admin 模块 无需auth验证

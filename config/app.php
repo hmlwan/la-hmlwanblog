@@ -179,6 +179,8 @@ return [
          * view assign data
          */
         App\Providers\ViewServiceProvider::class,
+
+        App\Providers\TestServiceProvider::class,
     ],
 
     /*
@@ -230,7 +232,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 //        'Markdown'=>\GrahamCampbell\Markdown\Facades\Markdown::class
-
+        'Test'=> \App\Facades\Test::class
     ],
 
 ];

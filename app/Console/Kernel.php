@@ -4,6 +4,10 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use App\Console\Commands\Workerman\Workerman;
+use App\Console\Commands\Redis\PublishCommand;
+use App\Console\Commands\Redis\SubCommand;
+
 
 class Kernel extends ConsoleKernel
 {
@@ -14,6 +18,9 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         //
+        Workerman::class,
+        PublishCommand::class,
+        SubCommand::class,
     ];
 
     /**
